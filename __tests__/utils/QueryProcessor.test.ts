@@ -39,4 +39,12 @@ describe("QueryProcessor", () => {
             "50"
           ));
     });
+
+    test('should return mul', () => {
+        const query = "What is 90 multiplied by 89?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "8010"
+          ));
+    });
 });

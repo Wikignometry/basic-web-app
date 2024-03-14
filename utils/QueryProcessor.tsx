@@ -34,5 +34,15 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("multiplied")) {
+
+    let A = query.split(" ")
+    let x = parseInt(A[2])
+    let y = parseInt(A[5])
+    return (
+      (x*y).toString()
+    );
+  }
+
   return "";
 }
