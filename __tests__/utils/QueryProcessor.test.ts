@@ -24,4 +24,11 @@ describe("QueryProcessor", () => {
             "Wikignometry"
           ));
     });
+    test('should return plus', () => {
+        const query = "What is 19 plus 37?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "56"
+          ));
+    });
 });

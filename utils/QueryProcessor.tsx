@@ -13,5 +13,15 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("plus")) {
+
+    let A = query.split(" ")
+    let x = parseInt(A[2])
+    let y = parseInt(A[4])
+    return (
+      (x+y).toString()
+    );
+  }
+
   return "";
 }
