@@ -62,18 +62,39 @@ export default function QueryProcessor(query: string): string {
     return n > 0 && Math.cbrt(n) % 1 === 0;
   };
 
-  // if (query.toLowerCase().includes("which of the following numbers is both a square and a cube:")) {
+  if (query.toLowerCase().includes("which of the following numbers is both a square and a cube:")) {
 
-  //   let A = query.split(" ")
-  //   let left = A.slice(12, )
-  //   let map1 = left.map(parseInt)
-  //   // let filter1 = map1.filter(isSquare)
-  //   // let filter2 = filter1.filter(isCubeRt)
+    let A = query.split(" ")
+    let left = A.slice(12, )
+    let map1 = left.map(function(num) { return parseInt(num, 10); });
+    let filter1 = map1.filter(isSquare)
+    let filter2 = filter1.filter(isCubeRt)
 
-  //   return (
-  //     left[1].toString()
-  //   );
-  // }
+    return (
+      filter2.toString()
+    );
+  }
+
+  var isPrime = function (num:number) {
+    for(let i = 2, s = Math.sqrt(num); i <= s; i++) {
+      if(num % i === 0) return false;
+  }
+  return num > 1;
+  };
+  
+  if (query.toLowerCase().includes("primes")) {
+
+    let A = query.split(" ")
+    let left = A.slice(7, )
+    let map1 = left.map(function(num) { return parseInt(num, 10); });
+    let filtered = map1.filter(isPrime)
+
+    return (
+      filtered.toString()
+    );
+  }
+
+
 
   return "";
 }

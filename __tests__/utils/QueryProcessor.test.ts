@@ -40,6 +40,7 @@ describe("QueryProcessor", () => {
           ));
     });
 
+    
     test('should return mul', () => {
         const query = "What is 90 multiplied by 89?";
         const response: string = QueryProcessor(query);
@@ -47,11 +48,19 @@ describe("QueryProcessor", () => {
             "8010"
           ));
     });
-    // test('should return mul', () => {
-    //     const query = "Which of the following numbers is both a square and a cube: 1089, 2197, 3924, 1860, 4096, 1071, 4983?";
-    //     const response: string = QueryProcessor(query);
-    //     expect(response).toBe((
-    //         "8010"
-    //       ));
-    // });
+    test('should return mul', () => {
+        const query = "Which of the following numbers are primes: 54, 83, 76, 90, 84?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "83"
+          ));
+    });
+    
+    test('should return mul', () => {
+        const query = "Which of the following numbers is both a square and a cube: 1089, 2197, 3924, 1860, 4096, 1071, 4983?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "4096"
+          ));
+    });
 });
