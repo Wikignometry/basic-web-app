@@ -23,5 +23,16 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("largest")) {
+
+    let A = query.split(" ")
+    let x = parseInt(A[8])
+    let y = parseInt(A[9])
+    let z = parseInt(A[10])
+    return (
+      (Math.max(x, y, z)).toString()
+    );
+  }
+
   return "";
 }
